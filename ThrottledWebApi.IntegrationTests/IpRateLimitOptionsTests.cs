@@ -1,9 +1,10 @@
 ﻿using AspNetCoreRateLimit;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ThrottledWebApi.IntegrationTests.TestBase
+namespace ThrottledWebApi.IntegrationTests
 {
     [TestClass]
     public class IpRateLimitOptionsTests
@@ -11,8 +12,8 @@ namespace ThrottledWebApi.IntegrationTests.TestBase
         [TestMethod]
         public void CheckIpRateLimitOptions()
         {
-            var options = new TestServerFixture().TestServer.Host.Services
-                .GetRequiredService<IOptions<IpRateLimitOptions>>();
+            using var factory = new WebApplicationFactory<Startup>();
+            var options = factory.Services.GetRequiredService<IOptions<IpRateLimitOptions>>();
             Assert.AreEqual(1, options.Value.GeneralRules.Count);
             var generalRule = options.Value.GeneralRules[0];
             Assert.AreEqual("*:/api/*", generalRule.Endpoint);
