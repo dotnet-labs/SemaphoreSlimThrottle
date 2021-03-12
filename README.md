@@ -1,5 +1,7 @@
 # Rate Limiting API Endpoints in ASP.NET Core
 
+<a href='https://ko-fi.com/changhuixu' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 ## [Medium Post 1: Rate Limiting API Endpoints in ASP.NET Core](https://medium.com/@changhuixu/rate-limiting-api-endpoints-in-asp-net-core-926e31428017)
 
 This post shows (1) an ASP.NET Core Web API demo project which limits inbound HTTP requests from the internet and (2) an integration test project which tests the Web API rate limit using a `TestServer` and an `HttpClient`. One of the integration tests shows an example approach to send concurrent API requests using a `Semaphore` in order to comply with the rate limit in the Web API application.
@@ -28,3 +30,9 @@ This solution contains 3 projects.
 
 - A .NET Core Console app with Dependency Injection, HttpClient
 - Throttling concurrent outgoing HTTP requests using a `semaphore`
+
+## License
+
+Feel free to use the code in this repository as it is under MIT license.
+
+<a href='https://ko-fi.com/changhuixu' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
